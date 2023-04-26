@@ -3,6 +3,6 @@
     "noImplicitAny": true,
     "outDir": "dist",
   },
-  "include": ["src//*", "src/flight/Ariline.ts"],
+  "include": ["src//*", "src/flight/Ariline.ts", "src/human/employee"],
   "exclude": ["node_modules", "/*.spec.ts"]
 }
