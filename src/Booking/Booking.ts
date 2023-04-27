@@ -9,7 +9,7 @@ export class Booking {
     dateTime:DateTime;
     flights:Flight;
     returnTicket:boolean;
-
+    
     constructor(dateTime:DateTime,seat:Seat, returnTicket: boolean) {
         this.dateTime = dateTime;
         this.seat = seat;

@@ -8,6 +8,7 @@ import { Employee } from "./airport/employee/Employee";
 import { Passenger } from "./passenger/Passenger";
 import { Pilot } from "./airport/employee/Pilot";
 import {Airline} from "./airport/airline/Airline"
+import { DateTime } from "./airport/flight/DateTime";
 
 // Q1. As an airport controller, I need to get the full details of a passenger’s trip from their Booking 
 // Reference Number (flights, bags, customer information…)
@@ -50,19 +51,23 @@ gateA10.setFlight(flight);
 airport.addFlights(flight);
 let seat = new Seat(1);
 
-let booking = new Booking(12,seat,true);
-booking.setSeat(seat);
-booking.addPassenger(passenger);
+// let booking = new Booking(seat,true);
+// booking.setSeat(seat);
+// booking.addPassenger(passenger);
 
 
 // console.log(flight.airoplan.passengers);
 // console.log(airport);
 // console.log(booking);
-console.log(flight.airoplan.passengers[0].booking);
+// console.log(flight.airoplan.passengers[0].booking);
 
 
 
 // As an airline manager, I want to know for a given flight, how many passengers have return tickets.
+let dateTime1 = new DateTime(12,4,2023,4)
+let booking1= new Booking(dateTime1,seat,true)
+let booking2= new Booking(dateTime1,seat,false)
+let airline = new Airline("Spirit Company");
+airline.addFlight(flight);
 
-// let airline = new Airline("Spirit",);
-
+console.log(airline.flights[0].airoplan.passengers[0]);
