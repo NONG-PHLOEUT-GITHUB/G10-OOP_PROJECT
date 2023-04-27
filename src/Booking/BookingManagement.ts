@@ -1,5 +1,8 @@
 export class Booking {
-    constructor(parameters) {
-        
+    bookings:Booking[]=[];
+
+
+    getBooking(){
+        return this.bookings;
     }
 }

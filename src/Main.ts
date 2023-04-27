@@ -7,14 +7,12 @@ import { Seat } from "./airport/aroplane/Seat";
 import { Employee } from "./airport/employee/Employee";
 import { Pilot } from "./airport/employee/staff/Pilot";
 import { Passenger } from "./human/passenger/Passenger";
-import {Ariline} from "../src/airport/flight/Ariline"
-
 
 // Q1. As an airport controller, I need to get the full details of a passenger’s trip from their Booking 
 // Reference Number (flights, bags, customer information…)
 let airport = new Airport("Siem Reap National Airport","Siem Reap");
 
-let employee = new Employee("ll","dd",8000);
+
 let gate = new Gate("A 10");
 let pilot = new Pilot("ll","dd",2000);
 let airoplan = new Airoplan("OA-LWP",pilot);
@@ -23,16 +21,15 @@ let passenger = new Passenger("ll","dd");
 airoplan.addPassenger(passenger);
 gate.setFlight(flight);
 
-airport.addEmployee(employee);
 airport.addGate(gate);
 // airport.addAiroplan(airoplan);
 airport.addFlights(flight);
 let seat = new Seat(1);
 
-let booking = new Booking();
-booking.setSeat(seat);
-booking.addPassenger(passenger);
-flight.addBooking(booking);
+// let booking = new Booking();
+// booking.setSeat(seat);
+// booking.addPassenger(passenger);
+
 
 // console.log(flight.airoplan.passengers);
 // console.log(airport);

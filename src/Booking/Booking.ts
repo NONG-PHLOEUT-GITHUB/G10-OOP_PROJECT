@@ -1,11 +1,17 @@
 import { Seat } from "../airport/aroplane/Seat";
-import { Passenger } from "../human/passenger/Passenger";
+import { DateTime } from "../airport/flight/DateTime";
+import { Flight } from "../airport/flight/Flight";
+import { Passenger } from "../passenger/Passenger";
 
 export class Booking {
     passengers:Passenger[]=[];
     seat: Seat;
-    constructor() {
-        
+    dateTime:DateTime;
+    flights:Flight;
+
+    constructor(dateTime:DateTime,seat:Seat) {
+        this.dateTime = dateTime;
+        this.seat = seat;
     }
 
     
