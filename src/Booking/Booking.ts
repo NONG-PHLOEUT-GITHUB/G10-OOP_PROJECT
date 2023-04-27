@@ -1,8 +1,18 @@
+import { Seat } from "../flight/airoplan/Seat";
 import { Passenger } from "../human/passenger/Passenger";
 
 export class Booking {
     passengers:Passenger[]=[];
-    constructor(parameters) {
+    seat: Seat;
+    constructor() {
         
+    }
+
+    
+    addPassenger(passenger:Passenger){
+        this.passengers.push(passenger);
+    }
+    setSeat(seat:Seat) {
+        this.seat = seat;
     }
 }

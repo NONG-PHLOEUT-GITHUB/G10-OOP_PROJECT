@@ -1,4 +1,4 @@
-import { Booking } from "../../Booking/Booking";
+import { Booking } from "../../booking/Booking";
 
 export class Passenger {
     firsName:string;
