@@ -8,4 +8,5 @@ export class Passenger {
         this.firsName = firsName;
         this.lastName = lastName;
     }
+
 }
