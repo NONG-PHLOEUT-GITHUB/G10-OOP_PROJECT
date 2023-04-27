@@ -1,7 +1,7 @@
-import { Flight } from "./flight/Flight";
-import { Gate } from "./flight/Gate";
-import { Airoplan } from "./flight/airoplan/Airoplan";
-import { Employee } from "./human/employee/Employee";
+import { Flight } from "./airport/flight/Flight";
+import { Gate } from "./airport/gate/Gate";
+import { Airoplan } from "./airport/aroplane/Airoplan";
+import { Employee } from "./airport/employee/Employee";
 
 export class Airport {
     name:string;

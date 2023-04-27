@@ -1,11 +1,11 @@
 import { Airport } from "./Airport";
 import { Booking } from "./booking/Booking";
-import { Flight } from "./flight/Flight";
-import { Gate } from "./flight/Gate";
-import { Airoplan } from "./flight/airoplan/Airoplan";
-import { Seat } from "./flight/airoplan/Seat";
-import { Employee } from "./human/employee/Employee";
-import { Pilot } from "./human/employee/staff/Pilot";
+import { Flight } from "./airport/flight/Flight";
+import { Gate } from "./airport/gate/Gate";
+import { Airoplan } from "./airport/aroplane/Airoplan";
+import { Seat } from "./airport/aroplane/Seat";
+import { Employee } from "./airport/employee/Employee";
+import { Pilot } from "./airport/employee/staff/Pilot";
 import { Passenger } from "./human/passenger/Passenger";
 
 let airport = new Airport("Siem Reap National Airport","Siem Reap");

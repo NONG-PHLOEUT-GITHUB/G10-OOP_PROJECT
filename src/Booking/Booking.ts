@@ -1,4 +1,4 @@
-import { Seat } from "../flight/airoplan/Seat";
+import { Seat } from "../airport/aroplane/Seat";
 import { Passenger } from "../human/passenger/Passenger";
 
 export class Booking {

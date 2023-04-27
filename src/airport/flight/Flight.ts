@@ -1,6 +1,6 @@
 
-import { Booking } from "../booking/Booking";
-import { Airoplan } from "./airoplan/Airoplan";
+import { Booking } from "../../booking/Booking";
+import { Airoplan } from "../aroplane/Airoplan";
 
 export class Flight {
     private flightNumber: number;

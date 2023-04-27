@@ -1,8 +1,8 @@
 
-import { Flight_attendant } from "../../human/employee/staff/Flight_attendant";
-import { Pilot } from "../../human/employee/staff/Pilot";
+import { Flight_attendant } from "../employee/staff/Flight_attendant";
+import { Pilot } from "../employee/staff/Pilot";
 import { Passenger } from "../../human/passenger/Passenger";
-import { Flight } from "../Flight";
+import { Flight } from "../flight/Flight";
 import { Layout } from "./Layout";
 export class Airoplan {
     registrationNumber: string;
