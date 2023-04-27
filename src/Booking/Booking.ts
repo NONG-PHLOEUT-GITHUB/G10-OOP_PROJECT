@@ -19,5 +19,8 @@ export class Booking {
     }
     // find passenger have return ticket
     
+    getSeat(){
+        return this.seat;
+    }
 
 }
