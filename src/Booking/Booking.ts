@@ -8,10 +8,12 @@ export class Booking {
     seat: Seat;
     dateTime:DateTime;
     flights:Flight;
+    returnTicket:boolean;
 
-    constructor(dateTime:DateTime,seat:Seat) {
+    constructor(dateTime:DateTime,seat:Seat, returnTicket: boolean) {
         this.dateTime = dateTime;
         this.seat = seat;
+        this.returnTicket = returnTicket;
     }
 
     

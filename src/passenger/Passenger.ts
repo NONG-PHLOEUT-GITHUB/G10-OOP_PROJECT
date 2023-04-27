@@ -8,5 +8,8 @@ export class Passenger {
         this.firsName = firsName;
         this.lastName = lastName;
     }
+    setBooking(booking: Booking){
+        this.booking.push(booking)
+    }
 
 }
