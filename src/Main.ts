@@ -13,16 +13,39 @@ import {Airline} from "./airport/airline/Airline"
 // Reference Number (flights, bags, customer information…)
 let airport = new Airport("Siem Reap National Airport","Siem Reap");
 
+// create airline _________________________________________________
+let cambodiaAngkorAir = new Airline("Cambodia Angkor Air");
+let airAsia = new Airline("Air Asia");
 
-let gate = new Gate("A 10");
+airport.addAirline(cambodiaAngkorAir);
+airport.addAirline(airAsia);
+
+// create gate ____________________________________________________
+
+let gateA10 = new Gate("A 10");
+let gateA11 = new Gate("A 11");
+let gateA12 = new Gate("A 12");
+airport.addGate(gateA10);
+airport.addGate(gateA11);
+airport.addGate(gateA12);
+
+// create employee__________________________________________________
+
 let pilot = new Pilot("ll","dd",2000);
+
+// create airoplane _________________________________________________
 let airoplan = new Airoplan("OA-LWP",pilot);
+
+// create flight ____________________________________________________
+
 let flight = new Flight(12,"Siem Reap","Bangkok","1hour",airoplan);
+
+// airport.addFlights()
+
 let passenger = new Passenger("ll","dd");
 airoplan.addPassenger(passenger);
-gate.setFlight(flight);
+gateA10.setFlight(flight);
 
-airport.addGate(gate);
 // airport.addAiroplan(airoplan);
 airport.addFlights(flight);
 let seat = new Seat(1);
@@ -35,6 +58,8 @@ booking.addPassenger(passenger);
 // console.log(flight.airoplan.passengers);
 // console.log(airport);
 // console.log(booking);
+console.log(flight.airoplan.passengers[0].booking);
+
 
 
 // As an airline manager, I want to know for a given flight, how many passengers have return tickets.

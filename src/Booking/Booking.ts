@@ -4,7 +4,7 @@ import { Flight } from "../airport/flight/Flight";
 import { Passenger } from "../passenger/Passenger";
 
 export class Booking {
-    passengers:Passenger[]=[];
+    passengers:Passenger;
     seat: Seat;
     dateTime:DateTime;
     flights:Flight;
@@ -16,11 +16,4 @@ export class Booking {
         this.returnTicket = returnTicket;
     }
 
-    
-    addPassenger(passenger:Passenger){
-        this.passengers.push(passenger);
-    }
-    setSeat(seat:Seat) {
-        this.seat = seat;
-    }
 }
