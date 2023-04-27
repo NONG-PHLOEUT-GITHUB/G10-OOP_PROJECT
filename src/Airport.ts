@@ -37,8 +37,8 @@ export class Airport {
         this.airlines.push(airline);
     }
 
-    getTrip(){
+    // getTrip(){
         
-    }
+    // }
 }
 

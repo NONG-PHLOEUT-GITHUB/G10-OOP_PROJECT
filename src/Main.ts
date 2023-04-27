@@ -50,15 +50,14 @@ gateA10.setFlight(flight);
 airport.addFlights(flight);
 let seat = new Seat(1);
 
-let booking = new Booking(12,seat,true);
-booking.setSeat(seat);
-booking.addPassenger(passenger);
+// let booking = new Booking(12,seat,true);
+// booking.setSeat(seat);
+// booking.addPassenger(passenger);
 
 
 // console.log(flight.airoplan.passengers);
-// console.log(airport);
 // console.log(booking);
-console.log(flight.airoplan.passengers[0].booking);
+// console.log(flight.airoplan.passengers[0].booking);
 
 
 
@@ -66,3 +65,6 @@ console.log(flight.airoplan.passengers[0].booking);
 
 // let airline = new Airline("Spirit",);
 
+
+// testing __________________________________________________________
+console.log(airport);
