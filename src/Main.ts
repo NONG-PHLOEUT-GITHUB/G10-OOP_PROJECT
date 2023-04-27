@@ -8,8 +8,9 @@ import { Employee } from "./airport/employee/Employee";
 import { Pilot } from "./airport/employee/Pilot";
 import { Passenger } from "./passenger/Passenger";
 import { Airline } from "./airport/airline/Airline";
-// create airport _________________________________________________
 
+// Q1. As an airport controller, I need to get the full details of a passenger’s trip from their Booking 
+// Reference Number (flights, bags, customer information…)
 let airport = new Airport("Siem Reap National Airport","Siem Reap");
 
 // create airline _________________________________________________
@@ -55,12 +56,12 @@ let seat = new Seat(1);
 
 
 // console.log(flight.airoplan.passengers);
-
-
-
-
-console.log(airport);
+// console.log(airport);
 // console.log(booking);
 console.log(flight.airoplan.passengers[0].booking);
 
 
+
+// As an airline manager, I want to know for a given flight, how many passengers have return tickets.
+// let airline = new Ariline("Spirit",flight);
+// console.log(airline);
