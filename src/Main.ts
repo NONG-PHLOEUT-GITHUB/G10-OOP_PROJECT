@@ -1,5 +1,4 @@
 import { Airport } from "./Airport";
-import { Booking } from "./booking/Booking";
 import { Flight } from "./airport/flight/Flight";
 import { Gate } from "./airport/gate/Gate";
 import { Airoplan } from "./airport/aroplane/Airoplan";
@@ -8,12 +7,12 @@ import { Employee } from "./airport/employee/Employee";
 import { Passenger } from "./passenger/Passenger";
 import { Pilot } from "./airport/employee/Pilot";
 import {Airline} from "./airport/airline/Airline"
-import { DateTime } from "./airport/flight/DateTime";
 
 // Q1. As an airport controller, I need to get the full details of a passenger’s trip from their Booking 
 // Reference Number (flights, bags, customer information…)
 let airport = new Airport("Siem Reap National Airport","Siem Reap");
-
+// create trip ___________________________________________________
+let trip = new Trip("Cambodia","Wale");
 // create airline _________________________________________________
 let cambodiaAngkorAir = new Airline("Cambodia Angkor Air");
 let airAsia = new Airline("Air Asia");
@@ -87,6 +86,6 @@ console.log(airline.getReturnTicket() + " customer");
 
 // console.log(airline);
 
-
+let dateTime = new DateTime(1,2,3,2023)
 // testing __________________________________________________________
-// console.log(airport);
+console.log(airport);

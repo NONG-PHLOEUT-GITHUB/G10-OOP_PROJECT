@@ -1,5 +1,6 @@
 import { Booking } from "../booking/Booking";
 
+
 export class Passenger {
     firsName:string;
     lastName:string;
