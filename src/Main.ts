@@ -39,35 +39,54 @@ let airoplan = new Airoplan("OA-LWP",pilot);
 
 // create flight ____________________________________________________
 
-let flight = new Flight(12,"Siem Reap","Bangkok","1hour",airoplan);
+let flight1 = new Flight(12,"Siem Reap","Bangkok","1hour",airoplan);
+let flight2 = new Flight(12,"Siem Reap","Bangkok","1hour",airoplan);
 
 // airport.addFlights()
 
-let passenger = new Passenger("ll","dd");
+let passenger = new Passenger("1noong","pi");
+let passenger2 = new Passenger("2pich","thun");
+let passenger3 = new Passenger("3Rady","Y");
 airoplan.addPassenger(passenger);
-gateA10.setFlight(flight);
+airoplan.addPassenger(passenger2);
+airoplan.addPassenger(passenger3);
+gateA10.setFlight(flight1);
 
 // airport.addAiroplan(airoplan);
-airport.addFlights(flight);
+airport.addFlights(flight1);
+airport.addFlights(flight2);
 let seat = new Seat(1);
+let seat2 = new Seat(2);
+let seat3 = new Seat(3);
 
-// let booking = new Booking(seat,true);
+// let booking = new Booking(12,seat,true);
 // booking.setSeat(seat);
 // booking.addPassenger(passenger);
 
 
 // console.log(flight.airoplan.passengers);
-// console.log(airport);
 // console.log(booking);
 // console.log(flight.airoplan.passengers[0].booking);
 
 
 
-// As an airline manager, I want to know for a given flight, how many passengers have return tickets.
+//Q2 As an airline manager, I want to know for a given flight, how many passengers have return tickets.
 let dateTime1 = new DateTime(12,4,2023,4)
-let booking1= new Booking(dateTime1,seat,true)
-let booking2= new Booking(dateTime1,seat,false)
+let booking1= new Booking(flight1,dateTime1,seat,true,passenger)
+let booking2= new Booking(flight1,dateTime1,seat2,true,passenger2)
+let booking3= new Booking(flight2,dateTime1,seat3,false,passenger3)
 let airline = new Airline("Spirit Company");
-airline.addFlight(flight);
+flight1.airoplan.passengers[0].setBooking(booking1)
+flight2.airoplan.passengers[1].setBooking(booking2)
+flight1.airoplan.passengers[2].setBooking(booking3)
 
-console.log(airline.flights[0].airoplan.passengers[0]);
+airline.addFlight(flight1);
+airline.addFlight(flight2);
+
+console.log(airline.getReturnTicket() + " customer");
+
+// console.log(airline);
+
+
+// testing __________________________________________________________
+// console.log(airport);

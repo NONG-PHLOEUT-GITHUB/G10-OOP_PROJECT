@@ -9,11 +9,15 @@ export class Booking {
     dateTime:DateTime;
     flights:Flight;
     returnTicket:boolean;
-    
-    constructor(dateTime:DateTime,seat:Seat, returnTicket: boolean) {
+
+    constructor(flight:Flight,dateTime:DateTime,seat:Seat, returnTicket: boolean,passenger:Passenger) {
+        this.flights = flight;
         this.dateTime = dateTime;
         this.seat = seat;
         this.returnTicket = returnTicket;
+        this.passengers = passenger;
     }
+    // find passenger have return ticket
+    
 
 }
