@@ -76,13 +76,16 @@ export class Airport {
     }
 
     getMeals (flightNumber: number,date:DateTime): number {
-        let countMeals = 0;
+        let countMeals:number = 0;
             this.flights.forEach(flight=>{
                 if(flight.flightNumber == flightNumber && flight.dateTime.isEqual(date)){
+                    flight.airoplan.passengers.forEach(passenger=>{
+                        console.log(passenger.booking);
                         
-            }
-    
-    })
+                    })    
+                }
+            })
+        return countMeals;
     }
 }
 

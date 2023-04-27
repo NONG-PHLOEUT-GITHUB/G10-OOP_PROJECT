@@ -9,6 +9,7 @@ import { Airline } from "./airport/airline/Airline"
 import { DateTime } from "./airport/flight/DateTime";
 import { Booking } from "./booking/Booking";
 import { SeatType } from "./airport/aroplane/SeatType";
+import { Meal } from "./booking/Meal";
 
 
 // Q1. As an airport controller, I need to get the full details of a passenger’s trip from their Booking 
@@ -78,13 +79,13 @@ let seat3 = new Seat(3,SeatType.busseness_class);
 
 //Q2 As an airline manager, I want to know for a given flight, how many passengers have return tickets.
 let dateTime1 = new DateTime(12,4,2023,4)
-let booking1= new Booking(flight1,dateTime1,seat,true,passenger)
-let booking2= new Booking(flight1,dateTime1,seat2,true,passenger2)
-let booking3= new Booking(flight2,dateTime1,seat3,false,passenger3)
+let booking1= new Booking(flight1,dateTime1,seat,true,passenger,Meal.Halal)
+// let booking2= new Booking(flight1,dateTime1,seat2,true,passenger2)
+// let booking3= new Booking(flight2,dateTime1,seat3,false,passenger3)
 let airline = new Airline("Spirit Company");
 flight1.airoplan.passengers[0].setBooking(booking1)
-flight2.airoplan.passengers[1].setBooking(booking2)
-flight1.airoplan.passengers[2].setBooking(booking3)
+// flight2.airoplan.passengers[1].setBooking(booking2)
+// flight1.airoplan.passengers[2].setBooking(booking3)
 
 airline.addFlight(flight1);
 airline.addFlight(flight2);
@@ -102,9 +103,14 @@ airline.addFlight(flight2);
 
 // get gate for passenger waiting by flight number
 
-console.log(airport.getGate(12,dateTime));
-console.log(airport.getFlight());
+// console.log(airport.getGate(12,dateTime));
+// console.log(airport.getFlight());
+console.log(airport.getMeals(12,dateTime));
 
 
 
-console.log(airport);
+
+
+// console.log(airport);
+
+
