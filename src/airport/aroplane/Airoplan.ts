@@ -1,7 +1,7 @@
 
-import { Flight_attendant } from "../employee/staff/Flight_attendant";
-import { Pilot } from "../employee/staff/Pilot";
-import { Passenger } from "../../human/passenger/Passenger";
+import { Flight_attendant } from "../employee/Flight_attendant";
+import { Pilot } from "../employee/Pilot";
+import { Passenger } from "../../passenger/Passenger";
 import { Flight } from "../flight/Flight";
 import { Layout } from "./Layout";
 export class Airoplan {
