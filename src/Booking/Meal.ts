@@ -1,7 +1,7 @@
 export enum Meal{
-    Vegetarian,
-    Vegan,
-    Daily_free,
-    Halal,
-    Kosher
+    Vegetarian = "Vegetarian",
+    Vegan = "Vagan",
+    Daily_free = "Daily_free",
+    Halal = "Halal",
+    Kosher = "Kosher"
 }

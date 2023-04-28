@@ -10,8 +10,8 @@ export class Booking {
     dateTime:DateTime;
     flights:Flight;
     returnTicket:boolean;
-    meal?:Meal;
-    constructor(flight:Flight,dateTime:DateTime,seat:Seat,returnTicket: boolean,passenger:Passenger,meal:Meal) {
+    meal?:Meal[]=[];
+    constructor(flight:Flight,dateTime:DateTime,seat:Seat,returnTicket: boolean,passenger:Passenger,meal:Meal[]) {
         this.flights = flight;
         this.dateTime = dateTime;
         this.seat = seat;
@@ -27,7 +27,17 @@ export class Booking {
 
 
     addMeal(meal:Meal){
-        this.meal = meal;
+        this.meal.push(meal);
     }
+
+
+    getMeals (flightNumber: string,date:DateTime): any {
+        let countMeals:Meal[] = [];
+            if(this.flights.flightNumber == flightNumber && this.flights.dateTime.isEqual(date)){
+               countMeals = this.meal;   
+            }
+        return countMeals;
+    }
+
 
 }

@@ -61,7 +61,7 @@ export class Airport {
 
     /// get gate for waiting flight by flight number
 
-    getGateNumber (flightNumber: number,date:DateTime): string {
+    getGateNumber (flightNumber: string,date:DateTime): string {
         let gateWaiting = "";
         this.gates.forEach(gate=>{
             gate.flights.forEach(flight=>{
@@ -74,7 +74,7 @@ export class Airport {
 
     }
 
-    getMeals (flightNumber: number,date:DateTime): number {
+    getMeals (flightNumber: string,date:DateTime): number {
         let countMeals:number = 0;
             this.flights.forEach(flight=>{
                 if(flight.flightNumber == flightNumber && flight.dateTime.isEqual(date)){
@@ -86,6 +86,14 @@ export class Airport {
             })
         return countMeals;
     }
-    /// get return ticket by passenger and flght number
+
+    //  salary pay to employee
+    findSalary():number{
+        let total:number=0;
+        for(let salary of this.employees){
+            total += salary.getSalary()
+        };
+        return total;
+    }
 }
 

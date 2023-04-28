@@ -1,5 +1,4 @@
 import { Booking } from "../booking/Booking";
-
 export class Passenger {
     firstName:string;
     lastName:string;
@@ -8,7 +7,7 @@ export class Passenger {
         this.firstName = firsName;
         this.lastName = lastName;
     }
-    setBooking(booking:Booking){
+    addBooking(booking:Booking){
         this.booking.push(booking)
     }
 
