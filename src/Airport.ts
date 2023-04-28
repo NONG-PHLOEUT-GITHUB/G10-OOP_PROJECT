@@ -19,7 +19,6 @@ export class Airport {
 
 
 
-
     addEmployee(employee:Employee){
         this.employees.push(employee);
     }
