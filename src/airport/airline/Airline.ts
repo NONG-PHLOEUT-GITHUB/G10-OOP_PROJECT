@@ -1,4 +1,4 @@
-import { Booking } from "../../booking/Booking";
+import { Booking } from "../../Booking/Booking";
 import { Flight } from "../flight/Flight";
  export class Airline{
     companyName: string;
@@ -9,14 +9,19 @@ import { Flight } from "../flight/Flight";
     addFlight(flight:Flight){
         this.flights.push(flight)
     }
+    
+    // return ticket --------------------------------
     getReturnTicket(){
-        let cout = 0;
+        let count = 0;
         for(let flight of this.flights){
-            if(flight.airoplan.passengers[0].booking[0].returnTicket == true){
-                cout+=1
+            for(let airplan of flight.airoplan.passengers){
+                for(let returnT of airplan.booking){
+                    if(returnT.returnTicket == true){
+                        count+=1
+                    }
+                }
             }
-        
-    return cout;
+        return count;
             
         }
     }

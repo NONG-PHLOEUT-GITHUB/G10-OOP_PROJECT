@@ -1,6 +1,4 @@
-import { Booking } from "../booking/Booking";
-
-
+import { Booking } from "../Booking/Booking";
 export class Passenger {
     firsName:string;
     lastName:string;
@@ -12,5 +10,15 @@ export class Passenger {
     setBooking(booking:Booking){
         this.booking.push(booking)
     }
+    // 
+//     getReturnTicket(){
+//         let count = 0;
+//         for(let returnT of this.booking){
+//             if(returnT.returnTicket == true){
+//                 count+=1
+//             }
+//         }
+//         return count
+// }
 
 }

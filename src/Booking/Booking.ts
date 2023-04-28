@@ -17,7 +17,5 @@ export class Booking {
         this.returnTicket = returnTicket;
         this.passengers = passenger;
     }
-    // find passenger have return ticket
-    
 
 }
