@@ -15,9 +15,7 @@ import { Flight } from "../flight/Flight";
             if(flight.airoplan.passengers[0].booking[0].returnTicket == true){
                 cout+=1
             }
-        
-    return cout;
-            
         }
+        return cout;
     }
 }

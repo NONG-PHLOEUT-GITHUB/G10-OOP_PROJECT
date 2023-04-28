@@ -61,7 +61,7 @@ export class Airport {
 
     /// get gate for waiting flight by flight number
 
-    getGate (flightNumber: number,date:DateTime): string {
+    getGateNumber (flightNumber: number,date:DateTime): string {
         let gateWaiting = "";
         this.gates.forEach(gate=>{
             gate.flights.forEach(flight=>{
@@ -86,5 +86,6 @@ export class Airport {
             })
         return countMeals;
     }
+    /// get return ticket by passenger and flght number
 }
 

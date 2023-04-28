@@ -44,16 +44,18 @@ let airoplan = new Airoplan("OA-LWP",pilot2);
 let flight1 = new Flight(12,"Siem Reap","Bangkok","1 hour",airoplan);
 let flight2 = new Flight(13,"Siem Reap","Singapor","1 hour",airoplan);
 
-// airport.addFlights()
-
+// create passenger_______________________________________________________
 let passenger = new Passenger("1noong","pi");
 let passenger2 = new Passenger("2pich","thun");
 let passenger3 = new Passenger("3Rady","Y");
+
+// add passenger_________________________________________________________
 airoplan.addPassenger(passenger);
 airoplan.addPassenger(passenger2);
 airoplan.addPassenger(passenger3);
+// add flight to gate ____________________________________________________
 gateA10.addFlight(flight1);
-/// create dateTime___________________________________________________________
+/// create dateTime_______________________________________________________
 let dateTime = new DateTime(1,2,3,2023);
 let dateTime2 = new DateTime(1,2,3,2023);
 flight1.setDateTime(dateTime);
@@ -78,8 +80,8 @@ let seat3 = new Seat(3,SeatType.busseness_class);
 
 
 //Q2 As an airline manager, I want to know for a given flight, how many passengers have return tickets.
-let dateTime1 = new DateTime(12,4,2023,4)
-let booking1= new Booking(flight1,dateTime1,seat,true,passenger,Meal.Halal)
+let dateTime1 = new DateTime(12,4,2023,4);
+let booking1= new Booking(flight1,dateTime1,seat,true,passenger,Meal.Halal);
 // let booking2= new Booking(flight1,dateTime1,seat2,true,passenger2)
 // let booking3= new Booking(flight2,dateTime1,seat3,false,passenger3)
 let airline = new Airline("Spirit Company");
@@ -99,13 +101,13 @@ airline.addFlight(flight2);
 
 // 3. As an airline pilot, I want to know, for a given date, how many flights I have to join.
 
-// console.log(airport.getFlights(pilot1,dateTime));
+console.log(airport.getFlights(pilot1,dateTime));
 
 // get gate for passenger waiting by flight number
 
-// console.log(airport.getGate(12,dateTime));
+console.log(airport.getGateNumber(12,dateTime)); // by flight number and datetime
 // console.log(airport.getFlight());
-console.log(airport.getMeals(12,dateTime));
+// console.log(airport.getMeals(12,dateTime));
 
 
 
