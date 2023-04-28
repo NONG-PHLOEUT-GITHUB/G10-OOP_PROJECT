@@ -1,10 +1,10 @@
-import { Booking } from "../Booking/Booking";
+import { Booking } from "../booking/Booking";
 export class Passenger {
-    firsName:string;
+    firstName:string;
     lastName:string;
     booking:Booking[]=[];
     constructor(firsName:string,lastName:string) {
-        this.firsName = firsName;
+        this.firstName = firsName;
         this.lastName = lastName;
     }
     setBooking(booking:Booking){
@@ -20,5 +20,9 @@ export class Passenger {
 //         }
 //         return count
 // }
+
+    isEqual(other:Passenger){
+        return this.firstName === other.firstName && this.lastName === other.lastName;
+    }
 
 }

@@ -1,4 +1,4 @@
-import { Booking } from "../../Booking/Booking";
+import { Booking } from "../../booking/Booking";
 import { Flight } from "../flight/Flight";
  export class Airline{
     companyName: string;

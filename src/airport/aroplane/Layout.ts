@@ -8,4 +8,20 @@ export class Layout {
         this.row = row;
         this.column = column;
     }
+
+    getNumberOfSeat(): number {
+        return this.seats.length
+    }
+
+    getAllSeat(): Seat[] {
+        return this.seats;
+    }
+
+    addSeat(seat: Seat){
+        this.seats.push(seat);
+    }
+
+ 
+
+
 }
