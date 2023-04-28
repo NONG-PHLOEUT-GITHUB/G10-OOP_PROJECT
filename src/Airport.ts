@@ -86,5 +86,14 @@ export class Airport {
             })
         return countMeals;
     }
+
+    //  salary pay to employee
+    findSalary():number{
+        let total:number=0;
+        for(let salary of this.employees){
+            total += salary.getSalary()
+        };
+        return total;
+    }
 }
 

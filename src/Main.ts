@@ -10,6 +10,8 @@ import { DateTime } from "./airport/flight/DateTime";
 import { Booking } from "./booking/Booking";
 import { SeatType } from "./airport/aroplane/SeatType";
 import { Meal } from "./booking/Meal";
+import { Chef } from "./airport/employee/Chef";
+import { Flight_attendant } from "./airport/employee/Flight_attendant";
 
 
 // Q1. As an airport controller, I need to get the full details of a passenger’s trip from their Booking 
@@ -33,11 +35,11 @@ airport.addGate(gateA12);
 
 // create employee__________________________________________________
 
-let pilot1 = new Pilot("Nong","dd",2000);
-let pilot2 = new Pilot("Srey Pich","dd",2000);
+let pilot1 = new Pilot("Nong","dd",10);
+let pilot2 = new Pilot("Srey Pich","dd",10);
 
 // create airoplane _________________________________________________
-let airoplan = new Airoplan("OA-LWP",pilot2);
+let airoplan = new Airoplan("OA-LWP",pilot1);
 
 // create flight ____________________________________________________
 
@@ -107,19 +109,17 @@ console.log(airline.getReturnTicket() + " customer have return ticket in a fligh
 // testing __________________________________________________________
 
 // 3. As an airline pilot, I want to know, for a given date, how many flights I have to join.
-
-// console.log(airport.getFlights(pilot1,dateTime));
+// console.log(airport.getFlights(pilot2,dateTime));
 
 // get gate for passenger waiting by flight number
 
 // console.log(airport.getGate(12,dateTime));
 // console.log(airport.getFlight());
-console.log(airport.getMeals(12,dateTime));
+// console.log(airport.getMeals(12,dateTime));
 
-
-
-
-
-// console.log(airport);
-
-
+// fins salary that pay to employee
+let flight_attenden = new Flight_attendant("jj","ki",10)
+airport.addEmployee(pilot1)
+airport.addEmployee(pilot2)
+airport.addEmployee(flight_attenden)
+console.log(airport.findSalary() + " is total of employee ");
