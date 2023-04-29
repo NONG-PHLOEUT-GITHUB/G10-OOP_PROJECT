@@ -13,6 +13,7 @@ import { Meal } from "./booking/Meal";
 import { Chef } from "./airport/employee/Chef";
 import { Flight_attendant } from "./airport/employee/Flight_attendant";
 import { Beg } from "./passenger/Beg";
+import { Layout } from "./airport/aroplane/Layout";
 
 
 // Q1. As an airport controller, I need to get the full details of a passenger’s trip from their Booking 
@@ -35,6 +36,9 @@ airport.addGate(gateA10);
 airport.addGate(gateA11);
 airport.addGate(gateA12);
 
+// create dateTime__________________________________________________
+let dateTime1 = new DateTime(12,4,2023,4);
+let dateTime2 = new DateTime(12,4,2023,4);
 // create employee__________________________________________________
 
 let pilot1 = new Pilot("Nong","dd",10);
@@ -42,10 +46,21 @@ let pilot2 = new Pilot("Srey Pich","dd",10);
 
 // create employee flight attentane_________________________________
 let flight_attenden = new Flight_attendant("jj","ki",10);
+/// create seat ____________________________________________________________
+
+let seat = new Seat(1,SeatType.busseness_class);
+let seat2 = new Seat(2,SeatType.economy_class);
+let seat3 = new Seat(3,SeatType.busseness_class);
+
+// create layout ____________________________________________________
+
+let layout = new Layout("A1","B2");
 
 // create airoplane _________________________________________________
-let airoplane = new Airoplan("OA-LWP");
 
+let airoplane = new Airoplan("OA-LWP");
+airoplane.addLayouts(layout);
+layout.addSeat(seat);
 
 // add employee to airport __________________________________________
 
@@ -76,19 +91,17 @@ passenger1.addBeg(beg2);
 
 airport.addAiroplan(airoplane);
 
+
 // add flight to gate ____________________________________________________
 
 gateA10.addFlight(flight1);
 
-/// create dateTime_______________________________________________________
-
-let dateTime = new DateTime(1,2,2023,3);
-let dateTime2 = new DateTime(1,2,2023,1);
-
 /// add dat time to flight________________________________________________
-flight1.setDateTime(dateTime);
+
+flight1.setDateTime(dateTime1);
 flight2.setDateTime(dateTime2);
 flight1.addPilot(pilot1);
+pilot1.addFlight(flight2);
 
 // add flight to airport___________________________________________________
 
@@ -99,23 +112,20 @@ airport.addFlights(flight2);
 airAsia.addFlight(flight1);
 cambodiaAngkorAir.addFlight(flight1);
 cambodiaAirways.addFlight(flight3);
-/// create seat ____________________________________________________________
 
-let seat = new Seat(1,SeatType.busseness_class);
-let seat2 = new Seat(2,SeatType.economy_class);
-let seat3 = new Seat(3,SeatType.busseness_class);
-// seat.setPassenger(passenger)
 
 
 
 /// passenger booking flight________________________________________________________________
-let booking1 = new Booking([flight1,flight2],dateTime,seat,true,passenger1,[Meal.Halal,Meal.Halal,Meal.Kosher]);
-let booking2 = new Booking([flight1,flight2],dateTime,seat,true,passenger1,[Meal.Halal,Meal.Halal,Meal.Kosher]);
+let booking1 = new Booking([flight1,flight2],dateTime1,seat,true,passenger1,[Meal.Halal,Meal.Halal,Meal.Kosher]);
+let booking2 = new Booking([flight2],dateTime2,seat2,true,passenger2,[Meal.Halal,Meal.Halal,Meal.Kosher]);
+let booking3 = new Booking([flight3],dateTime1,seat3,false,passenger3,[Meal.Halal,Meal.Vegetarian]);
 
 airAsia.addBookings(booking1);
 cambodiaAngkorAir.addBookings(booking1);
-// airAsia.addBookings(booking1);
-// cambodiaAngkorAir.addBookings(booking2);
+airAsia.addBookings(booking1);
+cambodiaAngkorAir.addBookings(booking2);
+cambodiaAirways.addBookings(booking3);
 
 // console.log(cambodiaAngkorAir.getFlight());
 
@@ -124,7 +134,6 @@ passenger1.addBooking(booking1);
 
 // testing __________________________________________________________
 //Q2 As an airline manager, I want to know for a given flight, how many passengers have return tickets.
-let dateTime1 = new DateTime(12,4,2023,4);
 // console.log(airAsia.getReturnTicket("AY6404"));
 
 // ____________________________________________________________________
@@ -153,3 +162,4 @@ let dateTime1 = new DateTime(12,4,2023,4);
 // console.log(airport.getAllBegs());
 
 
+// console.log(flight1);

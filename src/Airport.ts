@@ -44,7 +44,7 @@ export class Airport {
     getAiroplanes(){
         return "Airline have " + this.airoplans.length + " plane";
     }
-    // get all salary employees
+   
     // get all flight by pilot and date
 
     getFlights (pilot: Pilot, date: DateTime): Flight[] {
