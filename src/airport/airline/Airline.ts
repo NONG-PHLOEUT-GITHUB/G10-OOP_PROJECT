@@ -25,17 +25,34 @@ import { Flight } from "../flight/Flight";
     // return ticket --------------------------------
     getReturnTicket(flightNumber:string):Passenger[]{
         let count:Passenger[] = [];
-        this.bookings.forEach(Allflights =>{
-            if(Allflights.flights[0].flightNumber === flightNumber){
-                if(Allflights.returnTicket === true){
-                    count.push(Allflights.passengers);
+        this.bookings.forEach(allBooking =>{
+            allBooking.flights.forEach(fl =>{
+              if(fl.flightNumber === flightNumber) {
+                    if(allBooking.returnTicket === true){
+                        count.push(allBooking.passengers);
+                    }
                 }
-            }
+            })
         })
         return count;
     }
 
     getFlight(){
         return this.flights;
+    }
+
+
+    getMeals(flightNumber: string,date:DateTime):Meal[]{
+        let countMeals:Meal[]=[];
+        this.bookings.forEach(allBooking =>{
+            allBooking.flights.forEach(fl =>{
+                if(fl.flightNumber === flightNumber && fl.dateTime.isEqual(date)) {
+                    allBooking.meal.forEach(meal=>{
+                        countMeals.push(meal)
+                    })
+                }
+            })
+        })
+        return countMeals;
     }
 }

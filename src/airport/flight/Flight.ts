@@ -12,11 +12,9 @@ export class Flight {
     private arrivalAirport: string;
     private duration: string;
     airoplanes:Airoplan;
-    bookings:Booking[]=[];
     dateTime:DateTime;
     meals?:Meal[]=[];
     pilots:Pilot[]=[];
-    // passengers:Passenger[]=[];
     constructor(flightNumber: string, departureAirport: string, arrivalAirport: string,duration: string,) {
         this.flightNumber = flightNumber;
         this.departureAirport = departureAirport;
@@ -34,10 +32,6 @@ export class Flight {
     }
     setAroplane(airplane:Airoplan){
         this.airoplanes = airplane;
-    }
-    
-    addBooking(booking:Booking){
-        this.bookings.push();
     }
 
 
