@@ -40,4 +40,5 @@ export class Flight {
         this.bookings.push();
     }
 
+
 }
