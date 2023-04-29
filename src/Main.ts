@@ -21,6 +21,7 @@ let airport = new Airport("Siem Reap National Airport","Siem Reap");
 // create airline _________________________________________________
 let cambodiaAngkorAir = new Airline("Cambodia Angkor Air");
 let airAsia = new Airline("Air Asia");
+let cambodiaAirways = new Airline("Cambodia Airways");
 
 airport.addAirline(cambodiaAngkorAir);
 airport.addAirline(airAsia);
@@ -56,12 +57,13 @@ airport.addEmployee(flight_attenden);
 
 let flight1 = new Flight("AY6404","Siem Reap","Bangkok","1 hour");
 let flight2 = new Flight("KL018","Siem Reap","Singapor","1 hour");
+let flight3 = new Flight("TK8248","Phnom Penh","Singapor","2 hour");
 flight1.setAroplane(airoplane);
 
 // create passenger_______________________________________________________
-let passenger1 = new Passenger("1noong","pi");
-let passenger2 = new Passenger("2pich","thun");
-let passenger3 = new Passenger("3Rady","Y");
+let passenger1 = new Passenger("noong","pi");
+let passenger2 = new Passenger("pich","thun");
+let passenger3 = new Passenger("Rady","Y");
 
 let beg1 = new Beg(2);
 let beg2 = new Beg(1);
@@ -94,7 +96,7 @@ airport.addFlights(flight2);
 // airline.addFlights_______________________________________________________
 airAsia.addFlight(flight1);
 cambodiaAngkorAir.addFlight(flight1);
-cambodiaAngkorAir.addFlight(flight1);
+cambodiaAirways.addFlight(flight3);
 /// create seat ____________________________________________________________
 
 let seat = new Seat(1,SeatType.busseness_class);
@@ -127,26 +129,26 @@ let dateTime1 = new DateTime(12,4,2023,4);
 
 /// passenger booking flight________________________________________________________________
 
-let booking = new Booking([flight1,flight2],dateTime,seat,true,passenger1,[Meal.Halal,Meal.Halal]);
+let booking1 = new Booking([flight1,flight2],dateTime,seat,true,passenger1,[Meal.Halal,Meal.Halal,Meal.Kosher]);
+let booking2 = new Booking([flight1,flight2],dateTime,seat,true,passenger1,[Meal.Halal,Meal.Halal,Meal.Kosher]);
 
-airAsia.addBookings(booking);
+airAsia.addBookings(booking1);
+cambodiaAngkorAir.addBookings(booking1);
 // airAsia.addBookings(booking1);
 // cambodiaAngkorAir.addBookings(booking2);
 
 // console.log(cambodiaAngkorAir.getFlight());
 
-
+passenger1.addBooking(booking1);
 // ________________________________________________________________
 
 // console.log(airAsia.getReturnTicket("AY6404"));
 
-
-// console.log(bookingManagement.flights[0].bookings);
 /// get meal
-// console.log(b.getMeals("AY6404",dateTime));
+console.log(cambodiaAngkorAir.getMeals("AY6404",dateTime));
 
 
-console.log(airAsia);
+// console.log(airAsia.bookings);
 // console.log(cambodiaAngkorAir);
 
 

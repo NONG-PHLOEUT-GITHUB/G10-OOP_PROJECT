@@ -54,7 +54,6 @@ export class Airport {
             allPilot.forEach(pilot => {
                 if(pilot.isEqual(pilot) && flight.dateTime.isEqual(date)) {
                      result = this.flights;
-                    //  console.log(pilot.firstName);
                 }  
             })
                  
@@ -76,17 +75,6 @@ export class Airport {
         return "You are waiting in gate number " + gateWaiting;
 
     }
-
-    // getMeals (flightNumber: string,date:DateTime): number {
-    //     let countMeals:number = 0;
-    //         this.flights.forEach(flight =>{
-    //             if(flight.flightNumber == flightNumber && flight.dateTime.isEqual(date)){
-    //                console.log(flight.bookings);
-                     
-    //             }
-    //         })
-    //     return countMeals;
-    // }
 
     //  salary pay to employee
     findSalary():number{
