@@ -5,6 +5,7 @@ import { Airline } from "./airport/airline/Airline";
 import { Employee } from "./airport/employee/Employee";
 import { DateTime } from "./airport/flight/DateTime";
 import { Pilot } from "./airport/employee/Pilot";
+import { Beg } from "./passenger/Beg";
 
 export class Airport {
     private name:string;
@@ -53,7 +54,7 @@ export class Airport {
             let allPilot = flight.pilots;
             allPilot.forEach(pilot => {
                 if(pilot.isEqual(pilot) && flight.dateTime.isEqual(date)) {
-                     result = this.flights;
+                     result.push(flight) 
                 }  
             })
                  
@@ -84,5 +85,17 @@ export class Airport {
         };
         return total;
     }
-}
 
+    // get all begs
+    getAllBegs():Beg[]{
+        let begs: Beg[]= []
+        for(let airline of this.airlines){
+            for(let booking of airline.bookings){
+                for(let beg of booking.passengers.begs){
+                     begs.push(beg)
+                }
+            }
+            return begs;
+        }
+    }
+}
