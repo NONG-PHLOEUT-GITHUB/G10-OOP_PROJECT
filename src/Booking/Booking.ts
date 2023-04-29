@@ -30,20 +30,20 @@ export class Booking {
         this.meal.push(meal);
     }
 
-    // getMeals (flightNumber: string,date:DateTime): Meal[] {
-    //     let countMeals:Meal[]=[];
-    //         this.flights.forEach(flight =>{
-    //             if(flight.flightNumber == flightNumber && flight.dateTime.isEqual(date)){
-    //                flight.bookings.forEach(booking=>{
-    //                   booking.meal.forEach(meal=>{
-    //                     countMeals.push(meal);
-    //                   })
-    //                })
+    getMeals (flightNumber: string,date:DateTime): Meal[] {
+        let countMeals:Meal[]=[];
+            this.flights.forEach(flight =>{
+                if(flight.flightNumber == flightNumber && flight.dateTime.isEqual(date)){
+                   flight.bookings.forEach(booking=>{
+                      booking.meal.forEach(meal=>{
+                        countMeals.push(meal);
+                      })
+                   })
                      
-    //             }
-    //         })
-    //     return countMeals;
-    // }
+                }
+            })
+        return countMeals;
+    }
 
 
 }

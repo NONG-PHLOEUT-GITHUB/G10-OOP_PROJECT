@@ -105,8 +105,7 @@ let seat3 = new Seat(3,SeatType.busseness_class);
 //Q2 As an airline manager, I want to know for a given flight, how many passengers have return tickets.
 
 let dateTime1 = new DateTime(12,4,2023,4);
-// let booking1 = new Booking(flight1,dateTime1,seat,true,passenger2,[Meal.Vegetarian,Meal.Halal,Meal.Halal]);
-// let booking2 = new Booking(flight1,dateTime1,seat,true,passenger3,[Meal.Halal,Meal.Kosher]);
+let booking2 = new Booking([flight1],dateTime1,seat,true,passenger3,[Meal.Halal,Meal.Kosher]);
 
 
 
@@ -143,10 +142,10 @@ airAsia.addBookings(booking);
 
 // console.log(bookingManagement.flights[0].bookings);
 /// get meal
-// console.log(b.getMeals("AY6404",dateTime));
+console.log(booking2.getMeals("AY6404",dateTime));
 
 
-console.log(airAsia);
+// console.log(airAsia);
 // console.log(cambodiaAngkorAir);
 
 
