@@ -50,10 +50,13 @@ export class Airport {
 
         let result: Flight[] = [];
         this.flights.forEach(flight => {
-           if(flight.airoplan.pilot.isEqual(pilot) && flight.dateTime.isEqual(date)) {
-                result = this.flights;
-                console.log(flight.airoplan.pilot.firstName);
-           }  
+            let allPilot = flight.pilots;
+            allPilot.forEach(pilot => {
+                if(pilot.isEqual(pilot) && flight.dateTime.isEqual(date)) {
+                     result = this.flights;
+                    //  console.log(pilot.firstName);
+                }  
+            })
                  
         });
        return result;
@@ -74,18 +77,16 @@ export class Airport {
 
     }
 
-    getMeals (flightNumber: string,date:DateTime): number {
-        let countMeals:number = 0;
-            this.flights.forEach(flight=>{
-                if(flight.flightNumber == flightNumber && flight.dateTime.isEqual(date)){
-                    flight.airoplan.passengers.forEach(passenger=>{
-                        console.log(passenger.booking);
-                        
-                    })    
-                }
-            })
-        return countMeals;
-    }
+    // getMeals (flightNumber: string,date:DateTime): number {
+    //     let countMeals:number = 0;
+    //         this.flights.forEach(flight =>{
+    //             if(flight.flightNumber == flightNumber && flight.dateTime.isEqual(date)){
+    //                console.log(flight.bookings);
+                     
+    //             }
+    //         })
+    //     return countMeals;
+    // }
 
     //  salary pay to employee
     findSalary():number{

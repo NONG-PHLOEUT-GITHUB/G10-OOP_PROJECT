@@ -5,13 +5,13 @@ import { Passenger } from "../passenger/Passenger";
 import { Meal } from "./Meal";
 
 export class Booking {
+    flights:Flight[]=[];
     passengers:Passenger;
-    seat: Seat;
     dateTime:DateTime;
-    flights:Flight;
-    returnTicket:boolean;
+    seat: Seat;
     meal?:Meal[]=[];
-    constructor(flight:Flight,dateTime:DateTime,seat:Seat,returnTicket: boolean,passenger:Passenger,meal:Meal[]) {
+    returnTicket:boolean;
+    constructor(flight:Flight[],dateTime:DateTime,seat:Seat,returnTicket: boolean,passenger:Passenger,meal:Meal[]) {
         this.flights = flight;
         this.dateTime = dateTime;
         this.seat = seat;
@@ -30,14 +30,20 @@ export class Booking {
         this.meal.push(meal);
     }
 
-
-    getMeals (flightNumber: string,date:DateTime): any {
-        let countMeals:Meal[] = [];
-            if(this.flights.flightNumber == flightNumber && this.flights.dateTime.isEqual(date)){
-               countMeals = this.meal;   
-            }
-        return countMeals;
-    }
+    // getMeals (flightNumber: string,date:DateTime): Meal[] {
+    //     let countMeals:Meal[]=[];
+    //         this.flights.forEach(flight =>{
+    //             if(flight.flightNumber == flightNumber && flight.dateTime.isEqual(date)){
+    //                flight.bookings.forEach(booking=>{
+    //                   booking.meal.forEach(meal=>{
+    //                     countMeals.push(meal);
+    //                   })
+    //                })
+                     
+    //             }
+    //         })
+    //     return countMeals;
+    // }
 
 
 }

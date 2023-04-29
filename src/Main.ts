@@ -10,9 +10,9 @@ import { DateTime } from "./airport/flight/DateTime";
 import { Booking } from "./booking/Booking";
 import { SeatType } from "./airport/aroplane/SeatType";
 import { Meal } from "./booking/Meal";
-import { BookingManagement } from "./booking/BookingManagement";
 import { Chef } from "./airport/employee/Chef";
 import { Flight_attendant } from "./airport/employee/Flight_attendant";
+import { Beg } from "./passenger/Beg";
 
 
 // Q1. As an airport controller, I need to get the full details of a passenger’s trip from their Booking 
@@ -21,7 +21,6 @@ let airport = new Airport("Siem Reap National Airport","Siem Reap");
 // create airline _________________________________________________
 let cambodiaAngkorAir = new Airline("Cambodia Angkor Air");
 let airAsia = new Airline("Air Asia");
-let airline = new Airline("Spirit Company");
 
 airport.addAirline(cambodiaAngkorAir);
 airport.addAirline(airAsia);
@@ -44,31 +43,34 @@ let pilot2 = new Pilot("Srey Pich","dd",10);
 let flight_attenden = new Flight_attendant("jj","ki",10);
 
 // create airoplane _________________________________________________
-let airoplan = new Airoplan("OA-LWP",pilot2);
+let airoplane = new Airoplan("OA-LWP");
+
 
 // add employee to airport __________________________________________
 
-airport.addEmployee(pilot1)
-airport.addEmployee(pilot2)
-airport.addEmployee(flight_attenden)
+airport.addEmployee(pilot1);
+airport.addEmployee(pilot2);
+airport.addEmployee(flight_attenden);
 
 // create flight ____________________________________________________
 
-let flight1 = new Flight("AY6404","Siem Reap","Bangkok","1 hour",airoplan);
-let flight2 = new Flight("KL018","Siem Reap","Singapor","1 hour",airoplan);
+let flight1 = new Flight("AY6404","Siem Reap","Bangkok","1 hour");
+let flight2 = new Flight("KL018","Siem Reap","Singapor","1 hour");
+flight1.setAroplane(airoplane);
 
 // create passenger_______________________________________________________
-let passenger = new Passenger("1noong","pi");
+let passenger1 = new Passenger("1noong","pi");
 let passenger2 = new Passenger("2pich","thun");
 let passenger3 = new Passenger("3Rady","Y");
 
-// add passenger_________________________________________________________
-airoplan.addPassenger(passenger);
-airoplan.addPassenger(passenger2);
-airoplan.addPassenger(passenger3);
+let beg1 = new Beg(2);
+let beg2 = new Beg(1);
+passenger1.addBeg(beg1);
+passenger2.addBeg(beg2);
+
 // add airoplane to airport______________________________________________
 
-airport.addAiroplan(airoplan);
+airport.addAiroplan(airoplane);
 
 // add flight to gate ____________________________________________________
 
@@ -82,59 +84,72 @@ let dateTime2 = new DateTime(1,2,2023,1);
 /// add dat time to flight________________________________________________
 flight1.setDateTime(dateTime);
 flight2.setDateTime(dateTime2);
+flight1.addPilot(pilot1);
 
 // add flight to airport___________________________________________________
 
 airport.addFlights(flight1);
 airport.addFlights(flight2);
-/// create seat ___________________________________________________________
+
+// airline.addFlights_______________________________________________________
+airAsia.addFlight(flight1);
+cambodiaAngkorAir.addFlight(flight1);
+cambodiaAngkorAir.addFlight(flight1);
+/// create seat ____________________________________________________________
 
 let seat = new Seat(1,SeatType.busseness_class);
 let seat2 = new Seat(2,SeatType.economy_class);
 let seat3 = new Seat(3,SeatType.busseness_class);
-seat.setPassenger(passenger)
+// seat.setPassenger(passenger)
 
 //Q2 As an airline manager, I want to know for a given flight, how many passengers have return tickets.
 
 let dateTime1 = new DateTime(12,4,2023,4);
-// let booking1= new Booking(flight1,dateTime1,seat,true,passenger,[Meal.Vegetarian,Meal.Halal,Meal.Halal]);
-// let booking2= new Booking(flight1,dateTime1,seat,true,passenger,[Meal.Halal,Meal.Kosher]);
+// let booking1 = new Booking(flight1,dateTime1,seat,true,passenger2,[Meal.Vegetarian,Meal.Halal,Meal.Halal]);
+// let booking2 = new Booking(flight1,dateTime1,seat,true,passenger3,[Meal.Halal,Meal.Kosher]);
 
-airline.addFlight(flight1);
-airline.addFlight(flight1);
+
 
 // testing __________________________________________________________
 
-// test how many customer have return ticket
-// console.log(airline.getReturnTicket() + " customer have return ticket in a flight");
 
-// console.log(airline);
 // ____________________________________________________________________
 // 3. As an airline pilot, I want to know, for a given date, how many flights I have to join.
-
 // console.log(airport.getFlights(pilot2,dateTime));
-
-// 5. As an airline manager, I want to find out how much salary I pay all my employees
 // _____________________________________________________________
+// 5. As an airline manager, I want to find out how much salary I pay all my employees
 // console.log(airport.findSalary() + " is total of employee ");
 // _____________________________________________________________________
 //Q6. As a passenger, I want to know which gate my plane is waiting at.
 // console.log(airport.getGateNumber("AY6404",dateTime)); // by flight number and datetime
-// console.log(airport.getFlight());
 
-// console.log(booking1.getMeals("AY6404",dateTime));
+
 
 /// passenger booking flight________________________________________________________________
 
-let bookingManagement = new BookingManagement();
-console.log(bookingManagement);
+let booking = new Booking([flight1,flight2],dateTime,seat,true,passenger1,[Meal.Halal,Meal.Halal]);
 
-console.log(flight1.bookingFlight(flight1,passenger,dateTime,seat,true,[Meal.Daily_free]));
-console.log(flight1.bookingFlight(flight1,passenger,dateTime,seat,true,[Meal.Daily_free,Meal.Kosher]));
+airAsia.addBookings(booking);
+// airAsia.addBookings(booking1);
+// cambodiaAngkorAir.addBookings(booking2);
+
+// console.log(cambodiaAngkorAir.getFlight());
+
 
 // ________________________________________________________________
-// console.log(booking1);
 
-// console.log(airport);
+// console.log(airAsia.getReturnTicket("AY6404"));
 
-console.log(flight1.bookings);
+
+// console.log(bookingManagement.flights[0].bookings);
+/// get meal
+// console.log(b.getMeals("AY6404",dateTime));
+
+
+console.log(airAsia);
+// console.log(cambodiaAngkorAir);
+
+
+// console.log(booking);
+
+

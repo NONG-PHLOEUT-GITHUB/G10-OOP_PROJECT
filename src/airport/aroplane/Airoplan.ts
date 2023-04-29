@@ -9,16 +9,12 @@ export class Airoplan {
     registrationNumber: string;
     layouts: Layout[]=[];
     flights:Flight[]=[];
-    passengers:Passenger[]=[];
-    pilot:Pilot;
-    flightAttendant:Flight_attendant[]=[];
-    constructor(registration: string,pilot:Pilot){
+    constructor(registration: string){
         this.registrationNumber = registration;
-        this.pilot = pilot;
     }
 
-    addPassenger(passenger: Passenger){
-        this.passengers.push(passenger);
+    addLayouts(layout: Layout){
+        this.layouts.push(layout);
     }
 
     findFreeSeat(seat: Layout): Seat|undefined {
