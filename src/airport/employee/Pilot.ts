@@ -27,20 +27,4 @@ export class Pilot  extends Employee{
         this.flights.push(flight);
     }
 
-    // getFirstName(){
-    //     return this.firstName
-    // }
-
-    // getFlights (pilot: Pilot, date: DateTime): Flight[] {
-
-    //     let result: Flight[] = [];
-    //     this.flights.forEach(flight => {
-    //         if(flight.airoplan.pilot === pilot && flight.dateTime == date){
-    //             result = this.flights;
-    //         }
-           
-    //     });
-    //    return result;
-    // }
-
 }
