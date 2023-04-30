@@ -77,11 +77,11 @@ export class Airport {
 
     }
 
-    //  salary pay to employee
-    findSalary():number{
+    //  salary all salary pay to employee
+    findAllSalary():number{
         let total:number=0;
         for(let salary of this.employees){
-            total += salary.getSalary()
+            total += salary.getSalary();
         };
         return total;
     }

@@ -137,7 +137,7 @@ let dateTime1 = new DateTime(12,4,2023,4);
 
 // _____________________________________________________________
 // 5. As an airline manager, I want to find out how much salary I pay all my employees
-// console.log(airport.findSalary() + "$ is total of employee");
+console.log(airport.findAllSalary() + "$ is total of employee");
 // _____________________________________________________________________
 //Q6. As a passenger, I want to know which gate my plane is waiting at.
 // console.log(airport.getGateNumber("AY6404",dateTime)); // by flight number and datetime
