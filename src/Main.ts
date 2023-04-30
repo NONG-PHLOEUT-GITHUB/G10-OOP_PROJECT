@@ -117,9 +117,9 @@ cambodiaAirways.addFlight(flight3);
 
 
 /// passenger booking flight________________________________________________________________
-let booking1 = new Booking([flight1,flight2],dateTime1,seat,true,passenger1,[Meal.Halal,Meal.Halal,Meal.Kosher]);
-let booking2 = new Booking([flight2],dateTime2,seat2,true,passenger2,[Meal.Halal,Meal.Halal,Meal.Kosher]);
-let booking3 = new Booking([flight3],dateTime1,seat3,false,passenger3,[Meal.Halal,Meal.Vegetarian]);
+let booking1 = new Booking(1,[flight1,flight2],dateTime1,seat,true,passenger1,[Meal.Halal,Meal.Halal,Meal.Kosher]);
+let booking2 = new Booking(2,[flight2],dateTime2,seat2,true,passenger2,[Meal.Halal,Meal.Halal,Meal.Kosher]);
+let booking3 = new Booking(3,[flight3],dateTime1,seat3,false,passenger3,[Meal.Halal,Meal.Vegetarian]);
 
 airAsia.addBookings(booking1);
 cambodiaAngkorAir.addBookings(booking1);
