@@ -26,8 +26,8 @@ import { Flight } from "../flight/Flight";
     getReturnTicket(flightNumber:string):Passenger[]{
         let count:Passenger[] = [];
         this.bookings.forEach(allBooking =>{
-            allBooking.flights.forEach(fl =>{
-              if(fl.flightNumber === flightNumber) {
+            allBooking.flights.forEach(flight =>{
+              if(flight.flightNumber === flightNumber) {
                     if(allBooking.returnTicket === true){
                         count.push(allBooking.passengers);
                     }
