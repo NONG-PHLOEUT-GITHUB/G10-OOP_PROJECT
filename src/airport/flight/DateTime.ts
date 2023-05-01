@@ -11,11 +11,9 @@ export class DateTime  {
     }
 
     isEqual(other: DateTime): boolean {
-        return (
-            this.day === other.day &&
-            this.month === other.month &&
-            this.year === other.year &&
-            this.time === other.time
-        );
+        return (this.day === other.day 
+            && this.month === other.month 
+            && this.year === other.year 
+            && this.time === other.time);
     }
 }

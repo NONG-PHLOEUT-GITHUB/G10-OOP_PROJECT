@@ -52,6 +52,7 @@ export class Airport {
         let result: Flight[] = [];
         this.flights.forEach(flight => {
             let allPilot = flight.pilots;
+            
             allPilot.forEach(pilot => {
                 if(pilot.isEqual(pilot) && flight.dateTime.isEqual(date)) {
                      result.push(flight) 
@@ -73,7 +74,7 @@ export class Airport {
                 }
             })
         })
-        return "You are waiting in gate number " + gateWaiting;
+        return gateWaiting;
 
     }
 

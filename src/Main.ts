@@ -110,15 +110,15 @@ airport.addFlights(flight2);
 
 // airline.addFlights_______________________________________________________
 airAsia.addFlight(flight1);
-cambodiaAngkorAir.addFlight(flight1);
-cambodiaAirways.addFlight(flight3);
+cambodiaAngkorAir.addFlight(flight3);
+cambodiaAirways.addFlight(flight1);
 
 
 
 
 /// passenger booking flight________________________________________________________________
-let booking1 = new Booking(1,[flight1,flight2],dateTime1,seat,true,passenger1,[Meal.Halal,Meal.Halal,Meal.Kosher]);
-let booking2 = new Booking(2,[flight2],dateTime2,seat2,true,passenger2,[Meal.Halal,Meal.Halal,Meal.Kosher]);
+let booking1 = new Booking(1,[flight1,flight2],dateTime2,seat,true,passenger1,[Meal.Halal,Meal.Halal,Meal.Kosher]);
+let booking2 = new Booking(2,[flight2],dateTime2,seat2,true,passenger2,[Meal.Halal,Meal.Halal,Meal.Kosher,Meal.Vegetarian]);
 let booking3 = new Booking(3,[flight3],dateTime1,seat3,false,passenger3,[Meal.Halal,Meal.Vegetarian]);
 
 airAsia.addBookings(booking1);
@@ -127,39 +127,39 @@ airAsia.addBookings(booking1);
 cambodiaAngkorAir.addBookings(booking2);
 cambodiaAirways.addBookings(booking3);
 
-// console.log(cambodiaAngkorAir.getFlight());
+console.log(cambodiaAngkorAir.getFlight());
 
 passenger1.addBooking(booking1);
 
 
 // testing __________________________________________________________
-//Q2 As an airline manager, I want to know for a given flight, how many passengers have return tickets.
-// console.log(airAsia.getReturnTicket("AY6404"));
+// Q2 As an airline manager, I want to know for a given flight, how many passengers have return tickets.
+console.log(airAsia.getReturnTicket("AY6404"));
 
 // ____________________________________________________________________
 // 3. As an airline pilot, I want to know, for a given date, how many flights I have to join.
-// console.log(airport.getFlights(pilot1,dateTime));
-
+console.log(airport.getFlights(pilot1,dateTime1));
+let date = new DateTime(1,2,3,4)
 // ____________________________________________________________________
 // 4. As an airline chef, I need to know, for a given flight, how many of each meal type I need to prepare.
-// console.log(cambodiaAngkorAir.getMeals("AY6404",dateTime));
+console.log(cambodiaAngkorAir.getMeals("AY6404",dateTime1));        
 
 // _____________________________________________________________
 // 5. As an airline manager, I want to find out how much salary I pay all my employees
-// console.log(airport.findSalary() + "$ is total of employee");
+console.log(airport.findSalary() + "$ is total of employee");
 // _____________________________________________________________________
-//Q6. As a passenger, I want to know which gate my plane is waiting at.
-// console.log(airport.getGateNumber("AY6404",dateTime)); // by flight number and datetime
-
-// ________________________________________________________________
+// Q6. As a passenger, I want to know which gate my plane is waiting at.
+console.log(airport.getGateNumber("AY6404",dateTime2)); // by flight number and datetime
 
 
-
-// console.log(airAsia.bookings);
-// console.log(cambodiaAngkorAir);
-
-//  get all begs
-// console.log(airport.getAllBegs());
+//  get all begs________________________________________________________
+console.log(airport.getAllBegs());
 
 
-// console.log(flight1);
+
+
+
+
+
+
+
